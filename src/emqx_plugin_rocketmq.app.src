@@ -1,0 +1,11 @@
+{application, emqx_plugin_rocketmq,
+    [{description, "EMQX rcoketmq plugin."},
+        {vsn, "0.1.0"},
+        {modules, []},
+        {registered, [emqx_plugin_rocketmq_sup]},
+        {applications, [kernel, stdlib, rocketmq]},
+        {mod, {emqx_plugin_rocketmq_app, []}},
+        {env, []},
+        {licenses, ["Apache-2.0"]},
+        {maintainers, [""]}
+    ]}.

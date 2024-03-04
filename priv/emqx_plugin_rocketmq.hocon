@@ -1,0 +1,21 @@
+plugin_rocketmq {
+  connection {
+    bootstrap_hosts = "10.3.64.223:9876",
+    access_key = "rocketmq2",
+    secret_key = "12345678"
+  }
+
+  topics = [
+    {
+      rocketmq_topic = "emqx_t1",
+      filter = "test1/#",
+      rocketmq_message = "${.}"
+    }
+    , {
+      rocketmq_topic = "emqx_t2",
+      filter = "test2/#",
+      tag = "emqx_tag",
+      rocketmq_message = "{id : ${id}, username : ${username}}"
+    }
+  ]
+}
